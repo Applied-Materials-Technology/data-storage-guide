@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="../static/maincss.css">
+<head>
+  <title>Hello</title>
+</head>
+<body>
+
+<div class="content">
+  <h1>Data Storage Guide</h1>
+
+  <h3>Overview</h3>
+
+<p>This document is a living guide intended to systematise and standardise the storage of materials tests and component validation test data to ensure the data is traceable and reproducible into the future. This guide focuses on the storage of large image-based test datasets including digital image correlation (DIC) and infra-red thermography (IRT) data combined with points sensors (e.g. strain gauges, thermocouples, accelerometers, displacement transducers etc.).</p>
+
+<h3>Terminology</h3>
+
+<p>Throughout this document a series of terms will be used to describe the data that needs to be stored. ‘Campaign’ refers to a series of connected ‘experiments’ which might have a series of ‘tests’ for each experiment. </p>
+
+<p><b>Example 1:</b> A ‘campaign’ on HIVE occurs over several days and might include two different configurations or samples which would be called ‘experiments’. During each ‘experiment’ several pulses at different powers for the same configuration would be labelled ‘tests’. </p>
+
+<p><b>Example 2:</b> A ‘campaign’ for tensile testing would occur over several days with multiple different specimens tested called ‘experiments’. If one of these samples was tested multiple times (e.g. load unload in the elastic regime for accurate modulus measurement) then these would be called ‘tests’. </p>
+
+<h3>Meta-Data and Data Summary File </h3>
+
+<p>This is the over-arching data that describes the data, how it was collected and its structure. All campaigns will need to capture the meta-data required to reproduce all data from scratch. This will be captured by filling in a template file called a ‘data-summary.json’ or DS. An example DS for an experiment on HIVE can be found here: (<a href ="https://ukaeauk-my.sharepoint.com/:u:/g/personal/megan_sampson_ukaea_uk/ESkKsuEeIuBIqg7ZT1QT-noBDAyq8P-ijwAT1ExKss9UJQ?e=TDJWq6) with an example template here: [data-summary-template.json](https://ukaeauk-my.sharepoint.com/:u:/g/personal/megan_sampson_ukaea_uk/EdxkR2RQGu9EtFRhyoLrY8gBCPr6mHaiKZGGhNRd_rnqKA?e=m5yZA9">data-summary-example.json)</a></p>
+
+<p>The DS is in human readable JSON format and can be edited using a simple text editor. It is recommended that the file is edited using a code highlighting editor to ease readability such as VSCode. </p>
+
+<h3>Key Principles </h3>
+
+<ul>
+<li>As soon as possible after collection data should be immediately backed up to a cloud storage service (e.g. one drive or the PowerScale) even if the data does not yet conform to this guide. Unstructured data can be placed in the ‘ScratchSpace’ directory. </li>
+    
+<li>A DS must be completed that captures all relevant meta-data for the experiment. The DS must contain all information required to reproduce the campaign and associated data from scratch. </li>
+    
+
+<li>All data should be stored in open data formats whenever possible. </li>
+    
+
+<li>Data volume permitting human readable formats are preferred, e.g., *.csv, *.xml </li>
+    
+
+<li>Where data must be stored in a proprietary format the software and version required to read the files must be detailed in the DS </li>
+    
+
+<li>The data should be stored in a consistent folder structure as detailed below.</li>
+    
+
+<li>All raw experimental data must be stored such that any post-processing is fully reproducible.</li>
+    
+
+<li>All calibration information should be stored with the raw data and detailed in the DS.</li>
+    
+
+<li>All static data traces for noise floor analysis must be stored.</li>
+    
+
+<li>If processed experimental data is stored all software that was used to process the data must be detailed in the DS. </li>
+    
+
+<li>If bespoke code was used to process the data this must also be noted in the DS and a link to the version of the code that was used should be provided. </li>
+</ul>
+
+<h3>DIC Data Specifics</h3>
+
+<p>At minimum all raw images and calibration information required to process the data using DIC software must be stored.</p> 
+
+<b>MatchID</b>
+
+<p><i>Note: The MatchID grabber stores a *.xaml and *.csv file with each burst of images. These files contain essential meta-data and should not be deleted. Other systems may use other files or require the user to input metadata themselves.</i><p/>
+
+<p>The raw images that must be collected and stored include:</p>
+
+<ul>
+<li>All calibration images and information about the calibration target </li>
+    
+
+<li>At least 50 images or pairs for stereo are required - more are preferred </li>
+    
+
+<li>Even for 2D DIC a pixel to length conversion is required </li>
+    
+
+<li><i>Optional: it is good practice to calibrate before/after an experiment so two calibration folders should be present per experiment </i></li>
+    
+
+<li>Static images before any testing is done for noise floor analysis </li>
+    
+
+<li>At least 100 image or pairs for stereo are required </li>
+    
+
+<li><i>Optional: if possible rigid body translation tests can provide a more robust estimate of the noise floor and can help to analyse possible pattern quality issues or systematic errors. This is easy to do in a tensile test machine by releasing one of the grips. </i></li>
+    
+
+<li>All raw images taken during experiments / tests </li>
+</ul>
+    
+
+<p>If the raw data is processed with DIC software then the stored output must conform to the principles in the DIC good practice guide. A scratchspace directory will be used for data that is being processed but once a final processed version is created it must conform to the DIC good practice guide which can be found here: </p>
+
+<ul>
+<li>International Digital Image Correlation Society, Jones, E.M.C. and Iadicola, M.A. (Eds.) (2018). A Good Practices Guide for Digital Image Correlation. DOI: 10.32720/idics/gpg.ed1 </li>
+</ul>  
+</div>
+
+
+<div class="sidenav">
+  <h1><a class="biglink" href="master.html">Data Storage</a></h1>
+  <a class="smalllink" href="test.html">Example link</a>
+  <a class="smalllink" href="test.html">Example link</a>
+  <a class="smalllink" href="test.html">Example link</a>
+  <a class="smalllink" href="test.html">Example link</a>
+  <div class = "botlink";><a class="botlink" href="http://127.0.0.1:8000/signout/">Log out</a></div>
+  </span>
+</div>
+
+
+</body>
+</html>
+  

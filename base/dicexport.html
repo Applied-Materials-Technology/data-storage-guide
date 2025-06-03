@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="../static/maincss.css">
+<head>
+  <title>Hello</title>
+</head>
+<body>
+
+<div class="content">
+  <h1>Data Storage Guide</h1>
+
+  <html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"MS Gothic";
+	panose-1:2 11 6 9 7 2 5 8 2 4;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:"Aptos Display";}
+@font-face
+	{font-family:Aptos;}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"\@MS Gothic";
+	panose-1:2 11 6 9 7 2 5 8 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:116%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:18.0pt;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:116%;
+	page-break-after:avoid;
+	font-size:20.0pt;
+	font-family:"Aptos Display",sans-serif;
+	color:#0F4761;
+	font-weight:normal;}
+a:link, span.MsoHyperlink
+	{color:#467886;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:36.0pt;
+	line-height:116%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	line-height:116%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	line-height:116%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:36.0pt;
+	line-height:116%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Aptos Display",sans-serif;
+	color:#0F4761;}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:116%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-GB link="#467886" vlink="#96607D" style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><i><span style='font-size:11.0pt;
+line-height:116%;font-family:"Arial",sans-serif'>Authors:</span></i><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'> Megan
+Sampson, Lloyd Fletcher </span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><i><span style='font-size:11.0pt;
+line-height:116%;font-family:"Arial",sans-serif'>Date Created:</span></i><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'> 29th
+June 2023</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><i><span style='font-size:11.0pt;
+line-height:116%;font-family:"Arial",sans-serif'>Date Updated</span></i><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>: 11<sup>th</sup>
+April 2025</span></p>
+
+<h1 style='margin-top:10.0pt;margin-right:0cm;margin-bottom:5.0pt;margin-left:
+0cm'><b><span style='font-size:14.0pt;line-height:116%;font-family:"Arial",sans-serif'>Overview
+</span></b></h1>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span style='font-size:11.0pt;
+line-height:116%;font-family:"Arial",sans-serif'>This document is a living
+guide intended to systematise and standardise the storage of materials tests
+and component validation test data to ensure the data is traceable and
+reproducible into the future. This guide focuses on the storage of large
+image-based test datasets including digital image correlation (DIC) and
+infra-red thermography (IRT) data combined with points sensors (e.g. strain
+gauges, thermocouples, accelerometers, displacement transducers etc.). </span></p>
+
+<h1 style='margin-top:10.0pt;margin-right:0cm;margin-bottom:5.0pt;margin-left:
+0cm'><b><span style='font-size:14.0pt;line-height:116%;font-family:"Arial",sans-serif'>Terminology</span></b></h1>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span style='font-size:11.0pt;
+line-height:116%;font-family:"Arial",sans-serif'>Throughout this document a
+series of terms will be used to describe the data that needs to be stored.
+ Campaign  refers to a series of connected  experiments  which might have a
+series of  tests  for each experiment. </span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><i><span style='font-size:11.0pt;
+line-height:116%;font-family:"Arial",sans-serif'>Example 1:</span></i><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'> A
+ campaign  on HIVE occurs over several days and might include two different
+configurations or samples which would be called  experiments . During each
+ experiment  several pulses at different powers for the same configuration
+would be labelled  tests . </span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><i><span style='font-size:11.0pt;
+line-height:116%;font-family:"Arial",sans-serif'>Example 2</span></i><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>: A
+ campaign  for tensile testing would occur over several days with multiple
+different specimens tested called  experiments . If one of these samples was
+tested multiple times (e.g. load unload in the elastic regime for accurate
+modulus measurement) then these would be called  tests .</span></p>
+
+<h1 style='margin-top:10.0pt;margin-right:0cm;margin-bottom:5.0pt;margin-left:
+0cm'><b><span style='font-size:14.0pt;line-height:116%;font-family:"Arial",sans-serif'>Meta-Data
+&amp; Data Summary File</span></b></h1>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span style='font-size:11.0pt;
+line-height:116%;font-family:"Arial",sans-serif'>This is the over-arching data
+that describes the data, how it was collected and its structure. All campaigns
+will need to capture the meta-data required to reproduce all data from scratch.
+This will be captured by filling in a template file called a  data-summary.json 
+or DS. An example DS for an experiment on HIVE can be found here: </span><a
+href="https://ukaeauk-my.sharepoint.com/:u:/g/personal/megan_sampson_ukaea_uk/ESkKsuEeIuBIqg7ZT1QT-noBDAyq8P-ijwAT1ExKss9UJQ?e=TDJWq6"><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif;
+color:blue'>data-summary-example.json</span></a><span style='font-size:11.0pt;
+line-height:116%;font-family:"Arial",sans-serif'> with an example template
+here: </span><a
+href="https://ukaeauk-my.sharepoint.com/:u:/g/personal/megan_sampson_ukaea_uk/EdxkR2RQGu9EtFRhyoLrY8gBCPr6mHaiKZGGhNRd_rnqKA?e=m5yZA9"><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif;
+color:blue'>data-summary-template.json</span></a></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span style='font-size:11.0pt;
+line-height:116%;font-family:"Arial",sans-serif'>The DS is in human readable
+JSON format and can be edited using a simple text editor. It is recommended
+that the file is edited using a code highlighting editor to ease readability
+such as VSCode.</span></p>
+
+<h1 style='margin-top:10.0pt;margin-right:0cm;margin-bottom:5.0pt;margin-left:
+0cm'><b><span style='font-size:14.0pt;line-height:116%;font-family:"Arial",sans-serif'>Key
+Principles </span></b></h1>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:0cm;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>As
+soon as possible after collection data should be immediately backed up to a
+cloud storage service (e.g. one drive or the PowerScale) even if the data does
+not yet conform to this guide. Unstructured data can be placed in the
+ ScratchSpace  directory.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>A DS
+must be completed that captures all relevant meta-data for the experiment. The
+DS must contain all information required to reproduce the campaign and
+associated data from scratch.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>All
+data should be stored in open data formats whenever possible.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:72.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9675;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>Data
+volume permitting human readable formats are preferred, e.g., *.csv, *.xml</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>Where
+data must be stored in a proprietary format the software and version required
+to read the files must be detailed in the DS</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>The
+data should be stored in a consistent folder structure as detailed below. </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>All
+raw experimental data must be stored such that any post-processing is fully
+reproducible.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:72.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9675;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>All
+calibration information should be stored with the raw data and detailed in the
+DS.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:72.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9675;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>All
+static data traces for noise floor analysis must be stored. </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>If
+processed experimental data is stored all software that was used to process the
+data must be detailed in the DS.</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:72.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9675;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>If
+bespoke code was used to process the data this must also be noted in the DS and
+a link to the version of the code that was used should be provided.</span></p>
+
+<h1 style='margin-top:10.0pt;margin-right:0cm;margin-bottom:5.0pt;margin-left:
+0cm'><b><span style='font-size:14.0pt;line-height:116%;font-family:"Arial",sans-serif'>DIC
+Data Specifics</span></b></h1>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span style='font-size:11.0pt;
+line-height:116%;font-family:"Arial",sans-serif'>At minimum all raw images and
+calibration information required to process the data using DIC software must be
+stored. </span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><b><span style='font-size:11.0pt;
+line-height:116%;font-family:"Arial",sans-serif'>MatchID</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><b><span style='font-size:11.0pt;
+line-height:116%;font-family:"Arial",sans-serif'>Note:</span></b><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'> <i>The
+MatchID grabber stores a *.xaml and *.csv file with each burst of images. These
+files contain essential meta-data and should not be deleted. Other systems may
+use other files or require the user to input metadata themselves.</i></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span style='font-size:11.0pt;
+line-height:116%;font-family:"Arial",sans-serif'>The raw images that must be
+collected and stored include:</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:0cm;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>All
+calibration images and information about the calibration target</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:72.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9675;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>At
+least 50 images or pairs for stereo are required - more are preferred</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:72.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9675;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>Even
+for 2D DIC a pixel to length conversion is required</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:72.0pt;text-indent:-18.0pt'><i><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9675;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></i><i><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>Optional:
+it is good practice to calibrate before/after an experiment so two calibration
+folders should be present per experiment</span></i></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>Static
+images before any testing is done for noise floor analysis</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:72.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9675;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>At
+least 100 image or pairs for stereo are required</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt'><i><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></i><i><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>Optional:
+if possible rigid body translation tests can provide a more robust estimate of
+the noise floor and can help to analyse possible pattern quality issues or
+systematic errors. This is easy to do in a tensile test machine by releasing
+one of the grips.</span></i></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>All
+raw images taken during experiments / tests </span><br>
+<br>
+<span style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>If
+the raw data is processed with DIC software then the stored output must conform
+to the principles in the DIC good practice guide. A scratchspace directory will
+be used for data that is being processed but once a final processed version is
+created it must conform to the DIC good practice guide which can be found here:
+</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-bottom:0cm;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif;
+color:#212529'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif;
+color:#212529'>International Digital Image Correlation Society, Jones, E.M.C.
+and Iadicola, M.A. (Eds.) (2018). A Good Practices Guide for Digital Image
+Correlation. DOI: 10.32720/idics/gpg.ed1</span></p>
+
+<h1 style='margin-top:10.0pt;margin-right:0cm;margin-bottom:5.0pt;margin-left:
+0cm'><b><span style='font-size:14.0pt;line-height:116%;font-family:"Arial",sans-serif'>Raw
+Data: Directory Structure </span></b></h1>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><b><span style='font-size:11.0pt;
+line-height:116%;font-family:"Arial",sans-serif'>MatchID</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span style='font-size:11.0pt;
+line-height:116%;font-family:"Arial",sans-serif'>An example directory structure
+for a HIVE experiment using DIC can be found here: </span><a
+href="https://ukaeauk-my.sharepoint.com/:f:/g/personal/lloyd_fletcher_ukaea_uk/Egya6jl-dCRNtqHYDfacLvUBzaZT-_WP3XMLKRAxkRfl-Q?e=hRiXFP"><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif;
+color:blue'>HIVE-0001.</span></a><span style='font-size:11.0pt;line-height:
+116%;font-family:"Arial",sans-serif'> The directory structure is described
+below using the rules outlined here:</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:0cm;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'> D 
+indicates a directory and  F  indicates a file. </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>Multiple
+capital letters indicate a number used to identify the campaign / experiment /
+test. Example: ExpXX_DICYY could be Exp01_DIC02 which would be the data from
+DIC system 2 and experiment 1.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>Italics
+indicate a text identifier to describe the campaign / experiment / test. </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>Each
+level of indentation indicates that the indented directories or files are
+located within that directory.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>Each
+directory can be repeated multiple times to account for the number of
+experiments / DIC systems and other diagnostics used. </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>Additional
+files that are required to describe the structure of the data can be placed in
+the top directory with the DS, for example a HIVE experiment logbook. </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>The
+ ExpXX_PointSensors  directory is intended to capture point sensor data that is
+recorded separately to the DIC DAQ systems which will be contained in a *.csv
+in each DIC test directory with the images. An example would be the point
+sensor traces recorded by the HIVE DAQ system or the data recorded by the
+tensile test machines DAQ during a materials test.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>The
+word <i> identifier </i> in italics is used in some of the directory names
+below and is an optional identification string to describe the conditions under
+which the data was taken. For example: a test directory for a HIVE experiment
+might use the power level as an identifier and a materials test could use the
+specimen number. Regardless of the use of an <i>identifier</i> the contents of
+all directories will be described in the DS file. </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>Text
+contained with # # indicates a note, description or comment</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-bottom:0cm;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>A * is
+a wildcard and could be used to replace anything so a *.tiff is any file name
+with extension .tiff. </span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span style='font-size:11.0pt;
+line-height:116%;font-family:"Arial",sans-serif'>The directory structure for
+the raw DIC data (no post processing) is as follows:</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:0cm;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>D: <i>RigOrTestType</i>-NNNN-Raw</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:72.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9675;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>F:
+data-summary-<i>rigortesttype</i>-NNNN</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:72.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9675;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>D:
+DICYY_CalibCC</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9632;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>F:
+Image files in raw format normally *.tiff, MatchID will name these
+Image_IIII_C.tiff where IIII is the image number and C is the camera number</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9632;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>F:
+Calibration file in human readable format, *.caldat. File name should be
+CalCC.caldat.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9632;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>F:
+File containing image path, time stamp and traces from any connected and
+configured DAQ system in *.csv</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9632;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>F:
+File containing camera make, number of pixels and exposure time (in *.xaml
+format for MatchID)</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:72.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9675;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>D:
+DIC-IRYY_CalibCC</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9632;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>#See
+above calibration directory example but include IR calibration images from IR
+camera and main DIC camera#</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:72.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9675;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>D:
+ExpXX_DICYY</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9632;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>F:
+Calibration file in human readable format, *.caldat</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt'><i><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9632;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></i><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>D:
+CheckNN_<i>identifier</i></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:144.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>F:
+Image files in raw format normally *.tiff</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:144.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>F: CSV
+file containing image path, time stamp and traces from any connected and
+configured DAQ system in *.csv</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:144.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>F:
+Meta-data file containing camera make, number of pixels and exposure time (in
+*.xaml format for MatchID)</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt'><i><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9632;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></i><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>D:
+StatRefNN_<i>identifier</i></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:144.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>F:
+Image files in raw format normally *.tiff</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:144.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>F: CSV
+file containing image path, time stamp and traces from any connected and
+configured DAQ system in *.csv</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:144.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>F:
+Meta-data file containing camera make, number of pixels and exposure time (in
+*.xaml format for MatchID)</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt'><i><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9632;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></i><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>D:
+TestTTT_<i>identifier</i></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:144.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>F:
+Image files in raw format normally *.tiff</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:144.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>F: CSV
+file containing image path, time stamp and traces from any connected and
+configured DAQ system in *.csv</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:144.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9679;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>F:
+Meta-data file containing camera make, number of pixels and exposure time (in
+*.xaml format for MatchID)</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:72.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9675;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>D:
+ExpXX_DIC-IRYY</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9632;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>#See
+above DIC data structure but includes images from IR camera in each directory#</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:72.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9675;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>D:
+ExpXX_PointSensors</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9632;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>F: CSV
+files containing point sensor traces with descriptive column headings
+containing the sensor type, identification string and units of measure.
+Information on the point sensors should be captured in the DS so the *.csv is
+easy to interpret.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:72.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9675;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>D:
+ScratchSpace</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9632;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>#Any
+directory or file structure can be used here for temporary data processing#</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9632;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>#MatchID
+places processed data files in the same directory as the images, image
+directories must be copied here before processing to ensure the raw data
+directories are preserved.#</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt'><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>&#9632;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'>#Processed
+data must be stored in an open format if possible, MatchID has the capability
+to export *.csv so this should be used. The *.dat and *.3dat files may also be
+retained for ease of processing.#</span><br>
+<br>
+<span style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif'> </span></p>
+
+<h1 style='margin-top:10.0pt;margin-right:0cm;margin-bottom:5.0pt;margin-left:
+0cm'><b><span style='font-size:14.0pt;line-height:116%;font-family:"Arial",sans-serif'>Processed
+Data: Workflow</span></b></h1>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>Processed digital image correlation data can come from a variety
+of sources. This could include a single process of a real experiment through to
+a performance analysis on a simulated experiment (images created using
+synthetic image deformation). The flow chart below outlines the common
+processing workflow paths for MatchID and the associated file types. The
+directory structure will derive from these workflow paths.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:107%'><img border=0
+width=426 height=695 id="Picture 1186644838" src="testexport.files/image003.png"></p>
+
+<p class=MsoNormal style='margin-bottom:10.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:116%;font-family:"Arial",sans-serif'>Figure
+1: </span></b><span lang=EN-US style='font-size:10.0pt;line-height:116%;
+font-family:"Arial",sans-serif'>Flow chart showing the processing routes for
+digital image correlation data coming from MatchID</span></p>
+
+<h1 style='margin-top:10.0pt;margin-right:0cm;margin-bottom:5.0pt;margin-left:
+0cm'><b><span style='font-size:14.0pt;line-height:116%;font-family:"Arial",sans-serif'>Processed
+Data: Directory Structure</span></b></h1>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>The directory structure for processed data given below follows a
+similar convention to that described for the raw data above. The processed data
+directory structure below uses the following capital letters to mean the
+following:</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:0cm;text-indent:-18.0pt;
+line-height:107%'><span style='font-size:11.0pt;line-height:107%;font-family:
+"Arial",sans-serif;color:black'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>W = strain window</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt;
+line-height:107%'><span style='font-size:11.0pt;line-height:107%;font-family:
+"Arial",sans-serif;color:black'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>Z = number of data points</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt;
+line-height:107%'><span style='font-size:11.0pt;line-height:107%;font-family:
+"Arial",sans-serif;color:black'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>Q = type of interpolation</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt;
+line-height:107%'><span style='font-size:11.0pt;line-height:107%;font-family:
+"Arial",sans-serif;color:black'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>S = subset size</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt;
+line-height:107%'><span style='font-size:11.0pt;line-height:107%;font-family:
+"Arial",sans-serif;color:black'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>N = step size</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt;
+line-height:107%'><span style='font-size:11.0pt;line-height:107%;font-family:
+"Arial",sans-serif;color:black'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>C = camera number</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt;
+line-height:107%'><span style='font-size:11.0pt;line-height:107%;font-family:
+"Arial",sans-serif;color:black'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>M = number of time step</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-bottom:0cm;text-indent:-18.0pt;
+line-height:107%'><span style='font-size:11.0pt;line-height:107%;font-family:
+"Arial",sans-serif;color:black'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>X,Y,I,J,K = an integer used for numbering directories, images etc</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>Note that it is important that any *.m3inp or *.*inp files from
+MatchID are stored with the output data as these containing a copy of all
+processing parameters required to reproduce the data.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>The directory structure for the processed data is as follows, an
+example can be found here (<span style='background:yellow'>TODO insert link</span>).
+Note that the high-level directory identifier should correspond to the raw data
+that was used to create the processed data:</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>D: </span><i><span style='font-size:11.0pt;line-height:107%;
+font-family:"Arial",sans-serif'>RigOrTestType</span></i><span style='font-size:
+11.0pt;line-height:107%;font-family:"Arial",sans-serif'>-NNNN-ProcessPP </span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:0cm;text-indent:-18.0pt;
+line-height:107%'><span style='font-size:11.0pt;line-height:107%;font-family:
+Symbol;color:black'> <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>D: </span><span style='font-size:11.0pt;line-height:107%;
+font-family:"Arial",sans-serif'>ExpXX_DICYY<span style='color:black'>_real_performance_analysis</span></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:72.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>D: SS_NN_affine, SS_NN_quadratic #directories for each subset
+parameter combination#</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>D: SWZZ_QK #Sub-directories for each strain window combination#</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:144.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: Image_IIII_C.tiff.csv</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:144.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: Image_IIII_C.tiff_SWZZ_QK.3dat</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: Image_IIII_C.tiff.3dat</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: Image_IIII_C.tiff_SWZZ_QK.csv</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt;
+line-height:107%'><span style='font-size:11.0pt;line-height:107%;font-family:
+Symbol;color:black'> <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>D: </span><span style='font-size:11.0pt;line-height:107%;
+font-family:"Arial",sans-serif'>ExpXX_DICYY<span style='color:black'>_real_single_process</span></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:72.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>D: Some classification of subfolders</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: Image_IIII_C.tiff_u.csv</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: Image_IIII_C.tiff.3dat</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: TestXXX_YY-<i>optional-identifier</i>.H5</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: TestXXX_YY-<i>optional-identifier</i>.m3inp ## </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt;
+line-height:107%'><span style='font-size:11.0pt;line-height:107%;font-family:
+Symbol;color:black'> <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>D: </span><span style='font-size:11.0pt;line-height:107%;
+font-family:"Arial",sans-serif'>ExpXX_DICYY<span style='color:black'>_simulated_performance_analysis</span></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:72.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>D: Noise_NN #Many folders with different noise cases e.g. Noise_1#</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>D: folders for each parameter combination   SS_NN_affine,
+SS_NN_quadratic, subset size, step size</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:144.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>D: SWZZ_QK #strain window num of data points, type of
+interpolation#</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:180.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: Image_IIII_C_Numerical_M_Y.def.csv </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:180.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: Image_IIII_C_Numerical_M_Y.def_SWZZ_QK.3dat</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:144.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: 3dat files   Image_IIII_C_Numerical_M_Y.def.3dat</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:144.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: csv files   Image_IIII_C_Numerical_M_N.def_SWZZ_QK.csv</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: *.mipa   MatchID input file for performance analysis</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: BestDICParamFile.txt</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: #Finite element model input files# - Node_Coord.txt and
+Node_Strain.txt for ANSYS, Exodus for MOOSE</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: Image_IIII_C_Numerical_M_Y.def</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: Many m3inp files   VSGAnalysis_SS_NN_affine.m3inp</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:72.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>D: NoNoise</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>D: SS_NN_quadratic</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:144.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>D: SWZZ_QK</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:180.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: Image_IIII_C_Numerical_M_Y.def.3dat</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:180.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: Image_IIII_C_Numerical_M_Y.def.csv</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:180.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: *.m3inp #Text file describing DIC processing parameters#</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:144.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: Image_IIII_C_Numerical_M_Y.def.3dat </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:144.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: ImageDefwithoutNoise.mti3d</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:144.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: *.m3inp #Text file describing DIC processing parameters#</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: BestDICParamFile.txt</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>Node_Coord.txt</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>Node_Strain.txt</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;text-indent:-18.0pt;
+line-height:107%'><span style='font-size:11.0pt;line-height:107%;font-family:
+Symbol;color:black'> <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>D: </span><span style='font-size:11.0pt;line-height:107%;
+font-family:"Arial",sans-serif'>ExpXX_DICYY<span style='color:black'>_simulated_single_process</span></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:72.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>D: Many folders with different noise cases   Noise_1</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>D: SS_NN_quadratic</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:144.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>D: SWZZ_QK</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:180.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: Image_IIII_C_Numerical_M_Y_def.csv</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:180.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: Image_IIII_C_Numerical_M_Y.def_SWZZ_QK.3dat</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:144.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: Image_IIII_C_Numerical_M_Y.def.3dat</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:144.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: Image_IIII_C_Numerical_M_Y.def.SWZZ_QK.csv</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: *.mipa   MatchID input file</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: BestDICParamFile.txt</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: Image_IIII_C_Numerical_M_Y.def</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: Image_IIII_C_Numerical_M_Y.def.3dat</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: #Finite element model input files# - Node_Coord.txt and
+Node_Strain.txt</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: *.m3inp #Text file describing DIC processing parameters#</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: VSGAnalysis_SS_NN_quadratic.m3inp</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:72.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>D: NoNoise</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>D: SS_NN_quadratic</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:144.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>D: SWZZ_QK</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:180.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: Image_IIII_C_Numerical_M_Y.def.3dat</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:180.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: Image_IIII_C_Numerical_M_Y.def.csv</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:180.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>Job.m3inp</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:144.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: Image_IIII_C_Numerical_M_Y.def.3dat</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:144.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: ImageDefwithoutNoise.mti3d</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:144.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: Job.m3inp</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: BestDICParamFile.txt</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: Node_Coord.txt</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:108.0pt;text-indent:-18.0pt;line-height:107%'><span
+style='font-size:11.0pt;line-height:107%;font-family:Symbol;color:black'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Arial",sans-serif;
+color:black'>F: Node_Strain.txt</span></p>
+
+<p class=MsoNormal><i><span style='font-size:11.0pt;line-height:116%;
+font-family:"Arial",sans-serif;color:black'>&nbsp;</span></i></p>
+
+</div>
+
+</body>
+
+</html>
+
+</div>
+
+
+<div class="sidenav">
+  <h1><a class="biglink" href="master.html">Data Storage</a></h1>
+  <a class="smalllink" href="test.html">Example link</a>
+  <a class="smalllink" href="test.html">Example link</a>
+  <a class="smalllink" href="test.html">Example link</a>
+  <a class="smalllink" href="test.html">Example link</a>
+  <div class = "botlink";><a class="botlink" href="http://127.0.0.1:8000/signout/">Log out</a></div>
+  </span>
+</div>
+
+
+</body>
+</html>
+  
