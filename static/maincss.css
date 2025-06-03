@@ -1,0 +1,74 @@
+
+*{
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    background-color:floralwhite;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  
+  /* Style the side navigation */
+  .sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: dimgray;
+    overflow-x: hidden;
+  }
+
+
+  .sidenav a.smalllink, .sidenav a.biglink, .sidenav a.botlink {
+    color: floralwhite;
+    padding: 16px;
+    text-decoration: none;
+    left: 0%;
+    right: 0%;  
+    display: block;
+  }
+
+  .sidenav a.botlink {
+    display: block;
+    bottom: 0;
+    position: absolute;
+    left: 0%;
+    right: 0%;  
+    text-align: center;
+    
+  }
+
+  .sidenav a.botlink:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+
+  /* Change color on hover */
+  .sidenav a.smalllink:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+
+  .sidenav a.biglink {
+    align-content: center;
+    left: 0%;
+    right: 0%;  
+    text-decoration: none;
+    display: block;
+    text-anchor: middle;
+  }
+
+
+  /* Style the content */
+  .content {
+    margin-left: 200px;
+    padding-left: 20px;
+  }
+
+
