@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="../static/maincss.css">
+<head>
+  <title>Hello</title>
+</head>
+<body>
+
+<div class="content">
+  <h1>Data Storage Guide</h1>
+
+  <p align="left" style="line-height: 116%; margin-bottom: 0.28cm"><span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB"><span style="font-style: normal"><span style="font-weight: normal">This
+document is a living guide intended to systematise and standardise
+the storage of data produced within AMT to ensure the data is
+traceable and reproducible into the future. This guide focuses on the
+general storage of all task data, with links to specific storage
+guides for data including of large image-based test datasets
+including digital image correlation (DIC) and infra-red thermography
+(IRT) data combined with points sensors (e.g. strain gauges,
+thermocouples, accelerometers, displacement transducers etc.). </span></span></span></font></font></font></span>
+</p>
+<h1 class="western" align="left" style="page-break-inside: avoid; margin-top: 0.35cm; page-break-after: avoid">
+<span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><span style="font-style: normal"><b>Key
+Principles </b></span></span></font></font></font></span>
+</h1>
+<ul>
+	<li><p align="left" style="line-height: 116%; margin-bottom: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB"><span style="font-style: normal"><span style="font-weight: normal">As
+	soon as possible after collection data should be immediately backed
+	up to a cloud storage service (e.g. one drive or the PowerScale)
+	even if the data does not yet conform to this guide. Unstructured
+	data can be placed in the ‘ScratchSpace’ directory.</span></span></span></font></font></font></span></p>
+	<li><p align="left" style="line-height: 116%; margin-bottom: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB"><span style="font-style: normal"><span style="font-weight: normal">A
+	data summary (DS) must be completed that captures all relevant
+	meta-data for the experiment. The DS must contain all information
+	required to reproduce the campaign and associated data from scratch.</span></span></span></font></font></font></span></p>
+	<li><p align="left" style="line-height: 116%; margin-bottom: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB"><span style="font-style: normal"><span style="font-weight: normal">All
+	data should be stored in open data formats whenever possible.</span></span></span></font></font></font></span></p>
+	<ul>
+		<li><p align="left" style="line-height: 116%; margin-bottom: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB"><span style="font-style: normal"><span style="font-weight: normal">Data
+		volume permitting human readable formats are preferred, e.g.,
+		*.csv, *.xml</span></span></span></font></font></font></span></p>
+	</ul>
+	<li><p align="left" style="line-height: 116%; margin-bottom: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB"><span style="font-style: normal"><span style="font-weight: normal">Where
+	data must be stored in a proprietary format the software and version
+	required to read the files must be detailed in the DS</span></span></span></font></font></font></span></p>
+	<li><p align="left" style="line-height: 116%; margin-bottom: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB"><span style="font-style: normal"><span style="font-weight: normal">The
+	data should be stored in a consistent folder structure as detailed
+	in its data storage guide. </span></span></span></font></font></font></span>
+	</p>
+	<li><p align="left" style="line-height: 116%; margin-bottom: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB"><span style="font-style: normal"><span style="font-weight: normal">All
+	raw experimental data must be stored such that any post-processing
+	is fully reproducible.</span></span></span></font></font></font></span></p>
+	<ul>
+		<li><p align="left" style="line-height: 116%; margin-bottom: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB"><span style="font-style: normal"><span style="font-weight: normal">All
+		calibration information should be stored with the raw data and
+		detailed in the DS.</span></span></span></font></font></font></span></p>
+		<li><p align="left" style="line-height: 116%; margin-bottom: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB"><span style="font-style: normal"><span style="font-weight: normal">All
+		static data traces for noise floor analysis must be stored. </span></span></span></font></font></font></span>
+		</p>
+	</ul>
+	<li><p align="left" style="line-height: 116%; margin-bottom: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB"><span style="font-style: normal"><span style="font-weight: normal">If
+	processed experimental data is stored all software that was used to
+	process the data must be detailed in the DS.</span></span></span></font></font></font></span></p>
+	<ul>
+		<li><p align="left" style="line-height: 116%; margin-bottom: 0.28cm">
+		<span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB"><span style="font-style: normal"><span style="font-weight: normal">If
+		bespoke code was used to process the data this must also be noted
+		in the DS and a link to the version of the code that was used
+		should be provided.</span></span></span></font></font></font></span></p>
+	</ul>
+</ul>
+<h1 class="western" align="left" style="page-break-inside: avoid; margin-top: 0.35cm; page-break-after: avoid">
+<span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><span style="font-style: normal"><b>Storage </b></span></span></font></font></font></span>
+</h1>
+<p style="line-height: 116%; margin-bottom: 0.28cm"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB">Data
+stored on the Powerscale should be stored in a task folder, named
+with the associated task number. Each task folder should contain
+three folders. </span></font></font>
+</p>
+<ul>
+	<li><p style="line-height: 116%; margin-bottom: 0.28cm"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB">A
+	XXX folder for XXX. </span></font></font>
+	</p>
+	<li><p style="line-height: 116%; margin-bottom: 0.28cm"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB">A
+	“data” folder which should contain any experimental data and
+	outputs associated with the task. The contents of this folder should
+	be in accordance with its associated data storage guide</span></font></font></p>
+	<li><p style="line-height: 116%; margin-bottom: 0.28cm"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB">A
+	metadata folder which should contain the data summary file as
+	specified below, alongside a README document specifying any
+	additional work outputs that cannot be directory uploaded to
+	PowerScale e.g. GitHub repositories.</span></font></font></p>
+</ul>
+<h1 class="western" align="left" style="page-break-inside: avoid; margin-top: 0.35cm; page-break-after: avoid">
+<span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><span style="font-style: normal"><b>Meta-Data
+&amp; Data Summary File</b></span></span></font></font></font></span></h1>
+<p align="left" style="line-height: 116%; margin-bottom: 0.28cm"><span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB"><span style="font-style: normal"><span style="font-weight: normal">This
+is the over-arching data that describes the data, how it was
+collected and its structure. All campaigns will need to capture the
+meta-data required to reproduce all data from scratch. This will be
+captured by filling in a template file called a ‘data-summary.json’
+or a DS.An example DS for an experiment on HIVE can be found here:
+</span></span></span></font></font></font></span><font color="#467886"><u><a href="https://ukaeauk-my.sharepoint.com/:u:/g/personal/megan_sampson_ukaea_uk/ESkKsuEeIuBIqg7ZT1QT-noBDAyq8P-ijwAT1ExKss9UJQ?e=TDJWq6"><span style="font-variant: normal"><span style="text-decoration: none"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB"><span style="font-style: normal"><span style="font-weight: normal">data-summary-example.json</span></span></span></font></font></span></span></a></u></font><span style="font-variant: normal"><font color="#000000"><span style="text-decoration: none"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB"><span style="font-style: normal"><span style="font-weight: normal">
+with an example template to download here: </span></span></span></font></font></span></font></span><font color="#467886"><u><a href="https://ukaeauk-my.sharepoint.com/:u:/g/personal/megan_sampson_ukaea_uk/EdxkR2RQGu9EtFRhyoLrY8gBCPr6mHaiKZGGhNRd_rnqKA?e=m5yZA9"><span style="font-variant: normal"><span style="text-decoration: none"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB"><span style="font-style: normal"><span style="font-weight: normal">data-summary-template.json</span></span></span></font></font></span></span></a></u></font></p>
+<p align="left" style="line-height: 116%; margin-bottom: 0.28cm"><span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB"><span style="font-style: normal"><span style="font-weight: normal">The
+example DS is in human readable JSON format and can be edited using a
+simple text editor. It is recommended that the file is edited using a
+code highlighting editor to ease readability such as VSCode.</span></span></span></font></font></font></span></p>
+<h1 class="western" align="left" style="line-height: 116%; page-break-inside: avoid; margin-top: 0.35cm; page-break-after: avoid">
+<span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><span style="font-style: normal">
+<b>Data Specifics</b></span></span></font></font></font></span></h1>
+<p style="line-height: 116%; page-break-inside: avoid; margin-bottom: 0.28cm; page-break-after: avoid">
+<span lang="en-GB">
+	Follow the guidelines applicable to the type of data being stored:
+<p><a href="https://ukaeauk.sharepoint.com/:w:/s/mtl/EY3OtOv6yplBoJ29pd6B6AQB0GMjCM_RhAOJd0VSMar5cQ?e=NjWNx3"><span
+style='font-size:11.0pt;line-height:116%;font-family:"Arial",sans-serif;
+color:blue'>DIC data guide</span></a>
+</span></p>
+<h1 class="western" align="left" style="line-height: 116%; page-break-inside: avoid; margin-top: 0.35cm; page-break-after: avoid">
+<span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><span style="font-style: normal"><b>Storage</b></span></span></font></font></font></span></h1>
+<p align="left" style="line-height: 116%; margin-bottom: 0.28cm"><span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB"><span style="font-style: normal"><span style="font-weight: normal">The
+task folder should be in the following format:</span></span></span></font></font></font></span></p>
+<ul>
+	<li><p align="left" style="line-height: 116%; margin-bottom: 0.28cm">
+	<span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB"><span style="font-style: normal"><span style="font-weight: normal">AMT-XXXX</span></span></span></font></font></font></span></p>
+	<ul>
+		<li><p align="left" style="line-height: 116%; margin-bottom: 0.28cm">
+		<span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB"><span style="font-style: normal"><span style="font-weight: normal">XXXX</span></span></span></font></font></font></span></p>
+		<li><p align="left" style="line-height: 116%; margin-bottom: 0.28cm">
+		<span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB"><span style="font-style: normal"><span style="font-weight: normal">Metadata</span></span></span></font></font></font></span></p>
+		<ul>
+			<li><p align="left" style="line-height: 116%; margin-bottom: 0.28cm">
+			<span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB"><span style="font-style: normal"><span style="font-weight: normal">Data-summary.json</span></span></span></font></font></font></span></p>
+			<li><p align="left" style="line-height: 116%; margin-bottom: 0.28cm">
+			<span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB"><span style="font-style: normal"><span style="font-weight: normal">README</span></span></span></font></font></font></span></p>
+		</ul>
+		<li><p align="left" style="line-height: 116%; margin-bottom: 0.28cm">
+		<span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB"><span style="font-style: normal"><span style="font-weight: normal">Data</span></span></span></font></font></font></span></p>
+		<ul>
+			<li><p align="left" style="line-height: 116%; margin-bottom: 0.28cm">
+			<span style="font-variant: normal"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 11pt"><span lang="en-GB"><span style="font-style: normal"><span style="font-weight: normal">Data
+			outputs of task, see (list of data storage guides)</span></span></span></font></font></font></span></p>
+		</ul>
+	</ul>
+</ul>
+<p style="line-height: 116%; page-break-inside: avoid; margin-bottom: 0.28cm; page-break-after: avoid">
+<br/>
+<br/>
+
+</p>
+<p align="left" style="font-variant: normal; font-style: normal; font-weight: normal; line-height: 116%; margin-bottom: 0.28cm">
+<br/>
+<br/>
+
+</p>
+<p style="line-height: 116%; margin-bottom: 0.28cm"><br/>
+<br/>
+
+</p>
+</body>
+</html>
+</div>
+
+
+<div class="sidenav">
+  <h1><a class="biglink" href="home.html">Data Storage</a></h1>
+  <a class="smalllink" href="general.html">General Guidelines</a>
+  <a class="smalllink" href="dicexport.html">DIC Data Guide</a>
+  </span>
+</div>
+
+
+
+</body>
+</html>
+  
