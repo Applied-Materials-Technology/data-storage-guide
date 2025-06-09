@@ -74,4 +74,17 @@
     padding-left: 20px;
   }
 
+.infoblocks {
+    background: #cccccc;
+    width: 25%;
+    height: 200px;
+    margin: 5px 0;
+    float: left;
+    text-align: center;
+    outline: solid;
+    outline-color: grey;
+    padding: 1%;
+    padding-top: 5%;
+}
+
 
