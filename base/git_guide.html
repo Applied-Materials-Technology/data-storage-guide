@@ -1,0 +1,101 @@
+---
+layout: default_october
+title: Software
+---
+
+<div class="content">
+    <h><b>What is Git</b></h>
+    <p>Git allows you to version control your code.
+        This code will be stored in a git repository.
+        On your device, this will look like a folder than contains your project.
+    </p>
+
+    <p>Git allows you to:
+        <ul>
+            <li>Back up your code</li>
+            <li>Get your code on any device and sync changes</li>
+            <li>Pull in other changes that other people have made to a piece of code</li>
+            <li>Track the history of changes to code - and revert to previous version if needed</li>
+        </ul> 
+
+    </p>
+
+    <h><b>How is Git used</b></h>
+
+    <p><b>Starting a Project</b></p>
+    <p>You can create a project that uses git by making a folder for your project, and running the 
+        "git init" terminal command in this folder. 
+        You will then be able to track changes made in this folder with git.
+    </p>
+
+    <p>If you are unsure how to access the location you want through the terminal, you can right click 
+        the folder you want to access through file explorer and choose the "open in terminal option". 
+        This will open your terminal in the right location for you to run the terminal commands. 
+        If you need to move to a subfolder with "cd foldername" and move to the parent folder with "cd .."
+    </p>
+
+    <p><b>GitHub</b></p>
+
+    <p>Git repositories can hosted on sites like GitHub. 
+        On the GitHub website, you will find a project page for each repository hosted there.
+        The repository on the GitHub website is know as a remote repository, which means that it is 
+        hosted on a server accessible to others. You can access the code in this repository on your device 
+        by running "git clone CLONE_ID" - where CLONE_ID is a specific address that can be found on the project 
+        page - in the location you would like to store the code. The version of the repository that you have
+        cloned to your device is know as a local repository, as it can only be accessed locally. 
+    </p>
+
+    <p><b>Making Changes to Code</b></p>
+
+    <p>Before you make any changes, make sure your local code is up to date with the remote repository.
+        Run "git pull" to do this.
+    </p>
+
+    <p>You can make changes to the code in the local repository on your machine in the same way you would edit 
+        any other code. You will then have to "add" these changes to a staging area by running "git add filename", 
+        where filename is the path to the file you have changed. You can check what files you need to add by 
+        using the "git status" command. You can use "git add ." to add all the files.
+    </p>
+
+    <p>After you have added all your files, you need to add a message explaining the changes you have made. 
+        Run "git commit -m "message here" with your own message. This command will apply to all the files you have 
+        added. 
+    </p>
+
+    <p>These changes are currently only available to you locally. You can apply these changes to the remote repository 
+        by using the "git push" command. Afterwards, your changes should be available in the remote repository.
+    </p>
+
+    <p><b>Getting Changes from a Remote Repository</b></p>
+
+    <p>Changes pushed from one local repository are not automatically applied to any other existing local repositories.
+        If somebody else is working on code from the same remote repository, or you are working on a different device, 
+        you will have to ask git to get the changes yourself. You can get and apply the changes to your local repository 
+        by using the "git pull" command. 
+    </p>
+
+    <p>You should run this command before you make and push changes to ensure that your local branch is up to date 
+        and you do not introduce any conflicts. 
+    </p>
+
+    <p><b>Typical Workflow</b></p>
+
+    <p>So a typical git workflow from your local code would be something like:
+    <ul>
+        <li>Check for and apply any changes that have been made to the remote repository</li>
+        <li>Add the files that you have made changes to the staging area</li>
+        <li>Add a commit message explainging the changes you have made</li>
+        <li>Push the changes to the remote repository</li>
+    </ul> 
+    </p>
+
+    <p>Or, in translated into commands:
+    <ul>
+        <li>git pull</li>
+        <li>git add filename</li>
+        <li>git commit -m "my commit message"</li>
+        <li>git push</li>
+    </ul> 
+    </p>
+
+</div>
