@@ -91,13 +91,39 @@ title: Software
     </ul> 
     </p>
 
-    <p>Or, in translated into commands:
+    <p>Or, translated into commands:
     <ul>
         <li><code>git pull</code></li>
         <li><code>git add filename</code></li>
         <li><code>git commit -m "my commit message"</code></li>
         <li><code>git push</code></li>
     </ul> 
+    </p>
+
+    <h2><b>Working With Others: Branches</b></h2>
+
+    <p><b>Branches</b></p>
+
+    <p>If there is more than one person working in a repository, it is common that each person works on their own branch.
+        This means, if you were to make and push changes, the other person will not get the changes you have made unless 
+        they choose to merge your changes into their own branch. This means you can safetly push changes without conflicting
+        with the other person's work.
+    </p>
+
+    <p>Typically, there will be a main branch from which the other branches will stem from. Once you are satisfied with the 
+        changes you have made to your branch, you can merge your changes to the main branch. Everyone else working on the 
+        repository will then be able to <code>git pull</code> these changes from the main branch, and merge them into their
+        own.
+    </p>
+
+    <p><b>Branch Commands</b></p>
+
+    <p>To see what branch you are currently working on, use the <code>git branch</code> command. You can switch to another
+        existing branch with <code>git switch branchname</code>. To make a new branch, use <code>git switch -c branchname</code>.
+    </p>
+
+    <p>To apply the changes you have made to another branch, switch to the branch you want to apply your changes to, and then use
+        <code>git merge branchname</code>, where <code>branchname</code> is the name of the branch that you have made your changes to.
     </p>
 
 </div>
