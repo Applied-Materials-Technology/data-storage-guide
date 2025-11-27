@@ -4,6 +4,26 @@ title: Software
 ---
 
 <div class="content">
+    <h2><b>Contents</b></h2>
+    <ul class="no-bullets"> 
+        <li><a href="#what_is_git">What is Git</a></li>
+        <li><a href="#how_is_git_used">How is Git Used</a></li>
+        <ul class="no-bullets"> 
+            <li><a href="#starting_a_project">Starting a Project</a></li>
+            <li><a href="#github">GitHub</a></li>
+            <li><a href="#making_changes_to_code">Making Changes to Code</a></li>
+            <li><a href="#getting_changes_to_remote">Getting Changes from a Remote Repository</a></li>
+        </ul>
+        <li><a href="#typical_workflow_no_branches">Typical Workflow (No Branches)</a></li>
+        <li><a href="#working_with_others_branches">Working With Others: Branches</a></li>
+        <ul class="no-bullets"> 
+            <li><a href="#branches">Branches</a></li>
+            <li><a href="#branch_commands">Branch Commands</a></li>
+        </ul>
+        <li><a href="#typical_workflow_with_branches">Typical Workflow (With Branches)</a></li>
+    </ul> 
+
+    <div id="what_is_git"></div>
     <h2><b>What is Git</b></h2>
     <p>Git allows you to version control your code.
         This code will be stored in a git repository.
@@ -20,8 +40,10 @@ title: Software
 
     </p>
 
+    <div id="how_is_git_used"></div>
     <h2><b>How is Git used</b></h2>
 
+    <div id="starting_a_project"></div>
     <p><b>Starting a Project</b></p>
     <p>You can create a project that uses git by making a folder for your project, and running the command 
         <code>git init</code> in your terminal within this folder. You will then be able to track changes made in this 
@@ -35,6 +57,7 @@ title: Software
         folder with <code>cd ..</code>
     </p>
 
+    <div id="github"></div>
     <p><b>GitHub</b></p>
 
     <p>Git repositories can hosted on sites like GitHub. 
@@ -47,6 +70,7 @@ title: Software
         accessed locally. 
     </p>
 
+    <div id="making_changes_to_code"></div>
     <p><b>Making Changes to Code</b></p>
 
     <p>Before you make any changes, make sure your local code is up to date with the remote repository.
@@ -68,6 +92,7 @@ title: Software
         by using the <code>git push</code> command. Afterwards, your changes should be available in the remote repository.
     </p>
 
+    <div id="getting_changes_from_remote"></div>
     <p><b>Getting Changes from a Remote Repository</b></p>
 
     <p>Changes pushed from one local repository are not automatically applied to any other existing local repositories.
@@ -80,6 +105,7 @@ title: Software
         and you do not introduce any conflicts. 
     </p>
 
+    <div id="typical_workflow_no_branches"></div>
     <h2><b>Typical Workflow (No Branches)</b></h2>
 
     <p>So a typical git workflow from your local code would be something like:
@@ -100,8 +126,10 @@ title: Software
     </ul> 
     </p>
 
+    <div id="working_with_others_branches"></div>
     <h2><b>Working With Others: Branches</b></h2>
 
+    <div id="branches"></div>
     <p><b>Branches</b></p>
 
     <p>If there is more than one person working in a repository, it is common that each person works on their own branch.
@@ -116,6 +144,7 @@ title: Software
         own.
     </p>
 
+    <div id="branch_commands"></div>
     <p><b>Branch Commands</b></p>
 
     <p>To see what branch you are currently working on, use the <code>git branch</code> command. You can switch to another
@@ -126,6 +155,7 @@ title: Software
         <code>git merge branchname</code>, where <code>branchname</code> is the name of the branch that you have made your changes to.
     </p>
 
+    <div id="typical_workflow_with_branches"></div>
     <h2><b>Typical Workflow (With Branches)</b></h2>
 
     <p>If you are working on your own branch, your workflow will be something like this:
@@ -144,7 +174,7 @@ title: Software
 
     <p>Or, translated into commands:
     <ul>
-        <li><code>switch your-branch-name</code></li>
+        <li><code>git switch your-branch-name</code></li>
         <li><code>git pull</code></li>
         <li><code>git merge main</code></li>
         <li><code>git add filename</code></li>
