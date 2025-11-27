@@ -80,7 +80,7 @@ title: Software
         and you do not introduce any conflicts. 
     </p>
 
-    <h2><b>Typical Workflow</b></h2>
+    <h2><b>Typical Workflow (No Branches)</b></h2>
 
     <p>So a typical git workflow from your local code would be something like:
     <ul>
@@ -124,6 +124,35 @@ title: Software
 
     <p>To apply the changes you have made to another branch, switch to the branch you want to apply your changes to, and then use
         <code>git merge branchname</code>, where <code>branchname</code> is the name of the branch that you have made your changes to.
+    </p>
+
+    <h2><b>Typical Workflow (With Branches)</b></h2>
+
+    <p>If you are working on your own branch, your workflow will be something like this:
+    <ul>
+        <li>Check for and apply any changes that have been made to the remote main 
+            repository</li>
+        <li>Apply the changes made to the main branch to your own branch</li>
+        <li>Add the files that you have made changes to on your own branch to 
+            the staging area</li>
+        <li>Add a commit message explainging the changes you have made</li>
+        <li>Push the changes to the remote repository</li>
+        <li>When ready, apply these changes to the main branch</li>
+        <li>Push the changes to the remote main repository</li>
+    </ul> 
+    </p>
+
+    <p>Or, translated into commands:
+    <ul>
+        <li><code>switch your-branch-name</code></li>
+        <li><code>git pull</code></li>
+        <li><code>git merge main</code></li>
+        <li><code>git add filename</code></li>
+        <li><code>git commit -m "my commit message"</code></li>
+        <li><code>git switch main</code></li>
+        <li><code>git merge you-branch-name</code></li>
+        <li><code>git push</code></li>
+    </ul> 
     </p>
 
 </div>
