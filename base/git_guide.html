@@ -21,6 +21,10 @@ title: Git Guide
             <li><a href="#branch_commands">Branch Commands</a></li>
         </ul>
         <li><a href="#typical_workflow_with_branches">Typical Workflow (With Branches)</a></li>
+        <li><a href="#additional_setup">Additional Setup</a></li>
+        <ul class="no-bullets"> 
+            <li><a href="#ssh_keys">SSH Keys</a></li>
+        </ul>
     </ul> 
 
     <div id="what_is_git"></div>
@@ -76,7 +80,7 @@ title: Git Guide
         the repository that you have cloned to your device is know as a local repository, as it can only be 
         accessed locally. 
 
-        <img class="center-fit" src="https://applied-materials-technology.github.io/data-storage-guide/images/git_clone.png">
+        <!--<img class="center-fit" src="https://applied-materials-technology.github.io/data-storage-guide/images/git_clone.png">-->
     </p>
 
     <div id="making_changes_to_code"></div>
@@ -199,6 +203,48 @@ title: Git Guide
         <li><code>git merge you-branch-name</code></li>
         <li><code>git push</code></li>
     </ul> 
+    </p>
+
+    <div id="additional_setuo"></div>
+    <h2><b>Additional Settings</b></h2>
+
+    <div id="shh_keys"></div>
+    <p><b>SSH Keys</b></p>
+
+    <p>You may need to connect to GitHub repositories with 
+        <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh">SSH</a>. 
+        In this case, you will need to set up an SSH key to connect with.
+    </p>
+
+    <p>First, you should check if you have any existing SSH keys. You can do this by running the following
+        commands to list any files in your .ssh directory:
+    </p>
+
+    <p><code>ls -al ~/.ssh</code>
+    </p>
+
+    <p>If you need to generate generate an SSH key, run the following command and replace 
+        <code>your_email@example.com</code> with the email associated with your GitHub account:
+    </p>
+
+    <p><code>ssh-keygen -t ed25519 -C "your_email@example.com"</code>
+    </p>
+
+    <p>You will be prompted with <code>Enter file in which to save the key</code>, for which you can 
+        press enter to accept the default location. You will also be prompted choose a passphrase. Press 
+        enter if you do not want a passphrase. 
+    </p>
+
+    <p>You must now add your pubic key to your GitHub account. Copy the contents of the <code>.pub</code>
+        file generated. With a public file named <code>id_ed25519.pub</code>, you could do this with the following command:
+    </p>
+
+    <p><code>clip < ~/.ssh/id_ed25519.pub</code>
+    </p>
+
+    <p>Now, on your GitHub account, go to <code>Settings > SSH and GPG keys</code> and click <code>
+        New SSH key</code>. Paste the <code>.pub</code> file contents in the Key box, give it a title, 
+        and save. You should now be able to connect to repositories via SSH.
     </p>
 
 </div>
