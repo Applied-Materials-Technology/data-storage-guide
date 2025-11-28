@@ -158,3 +158,11 @@ footer {
   list-style-type: none;
 
 }
+
+.subtext-box {
+
+  background-color: #f0f0f0;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
