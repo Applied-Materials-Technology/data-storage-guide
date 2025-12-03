@@ -166,3 +166,12 @@ footer {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+
+.box img {
+  width: 1000px;
+  height: 500px;
+}
+
+.box1 img {
+  object-fit: fill;
+}
