@@ -14,6 +14,19 @@ title: Git Guide - GUI
     <h2><b>Contents</b></h2>
     <ul class="no-bullets"> 
         <li><a href="#what_is_git">What is Git</a></li>
+        <li><a href="#getting_started">Getting Started</a></li>
+        <ul class="no-bullets"> 
+            <li><a href="#init_repo">Starting a Project</a></li>
+            <li><a href="#making_changes_to_code">Making Changes to Code</a></li>
+        </ul>
+        <ul class="no-bullets"> 
+            <li><a href="#branches">Branches</a></li>
+            <li><a href="#branch_commands">Branch Commands</a></li>
+        </ul>
+        <li><a href="#additional_setup">Additional Setup</a></li>
+        <ul class="no-bullets"> 
+            <li><a href="#ssh_keys">SSH Keys</a></li>
+        </ul>
     </ul> 
 
     <div id="what_is_git"></div>
@@ -32,5 +45,192 @@ title: Git Guide - GUI
         </ul> 
 
     </p>
+    <p>With git, you can:
+        <ul>
+            <li>Back up your code</li>
+            <li>Get your code on any device and sync changes</li>
+            <li>Pull in other changes that other people have made to a piece of code</li>
+            <li>Track the history of changes to code - and revert to previous version if needed</li>
+        </ul> 
+
+    </p>
+
+    <div id="getting_started"></div>
+    <h2><b>Getting Started</b></h2>
+
+    <div class="subtext-box">
+    <p>Using GitHub requires 
+        <a href="https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home">
+            making an account</a>. Find details on accessing the AMT GitHub group 
+            <a href="{{ "/base/software.html" | absolute_url }}">here</a>
+    </p>
+    </div>
+
+    <p>This guide uses VS Code. You can download VS Code <a href="https://code.visualstudio.com/Download?_exp_download=fb315fc982">here</a>.
+        You will also need to download git <a href="https://git-scm.com/install/windows">here</a>.
+    </p>
+
+    <div id="init_repo"></div>
+    <h2><b>Starting a Project</b></h2>
+    <p>In VS Code, open the code you want to use git for. Open the Source Control view on 
+        the left side bar (<code>Ctrl+Shift+G</code>) and click <code>Initialise Repository</code>,
+        and <code>Publish to GitHub</code> to put it on GitHub. You may need to connect your GitHub
+        account for this.
+    </p>
+
+    <p>You can access remote repositories on your device by opening the Source Control view on 
+        the left side bar (<code>Ctrl+Shift+G</code>) in an empty VS Code window, and click
+        <code>Clone Repository</code>. This will allow you to input the URL of the repository
+        you wish to active.
+    </p>
+
+    <div id="making_changes_to_code"></div>
+    <p><b>Making Changes to Code</b></p>
+
+    <p>Before you make any changes, make sure your local code is up to date with the remote repository.
+        Open the Source Control view on the left side bar (<code>Ctrl+Shift+G</code>), click the <code>...</code>
+        button on the <code>REPOSITORIES</code> section, and click <code>Pull</code>.
+
+    </p>
+
+    <p>You can make changes to the code in the local repository on your machine in the same way you would edit 
+        any other code. You can check which files you have made changes to by opening the Source 
+        Control view on the left side bar (<code>Ctrl+Shift+G</code>). You will need to stage and 
+        commit these files to save your changes to your remote repository. 
+    </p>
+
+    <p>To stage your files, hover over each file in the list of changed files and click the <code>+</code>
+        button. If you accidentally stage a file you did not want to stage, you can unstage it by hovering
+        over it and clicking the <code>-</code> button.
+    </p>
+
+    <p>After you have added all your files, you need to add a message explaining the changes you have made. 
+        Enter your commit message in the message box above the list of changed files and click the 
+        <code>commit</code> button to commit your changes.
+    </p>
+
+    <p>These changes are currently only available to you locally. You can apply these changes to the remote repository 
+        by opening the Source Control view on the left side bar (<code>Ctrl+Shift+G</code>) and clicking
+        the <code>sync changes</code> button. Afterwards, your changes should be available in the remote repository.
+    </p>
+
+    <div id="working_with_others_branches"></div>
+    <h2><b>Working With Others: Branches</b></h2>
+
+    <div id="branches"></div>
+    <p><b>Branches</b></p>
+
+    <p>If there is more than one person working in a repository, it is common that each person works on their own branch.
+        This means, if you were to make and push changes, the other person will not get the changes you have made unless 
+        they choose to merge your changes into their own branch. This means you can safetly push changes without conflicting
+        with the other person's work.
+    </p>
+
+    <p>Typically, there will be a main branch from which the other branches will stem from. Once you are satisfied with the 
+        changes you have made to your branch, you can merge your changes to the main branch. Everyone else working on the 
+        repository will then be able to get these changes from the main branch, and merge them into their
+        own.
+    </p>
+
+
+    <div id="branch_commands"></div>
+    <p><b>Branch Commands</b></p>
+
+    <p>You can check what branch you are on in Source Control view, or on the status bar at the 
+    </p>
+
+    <p>To switch to another branch, select the branch you want to move to from the status bar.
+    </p>
+
+    <p>To create a new branch, click your current branch name on the bottom status bar and enter the 
+        name of your new branch. Click the branch you want to base your new branch from, usually main,
+        and VS Code will switch to your new branch. This should appear on your remote repository when you
+        next sync your repositories.
+    </p>
+
+    <p>If you need to merge changes from your new branch back to the source branch, switch to the branch
+        you want to merge to. Then you can open the Command Palette (<code>Shift+cmd+P</code>), type
+        <code>Git: Merge branch</code> and select the branch you want to merge from.
+    </p>
+
+
+    <div id="additional_setup"></div>
+    <h2><b>Additional Settings</b></h2>
+
+    <div id="shh_keys"></div>
+    <p><b>SSH Keys</b></p>
+
+    <div class="subtext-box">
+    <p>This section requires CLI use. It is necessary to allow you to easily connect with remote repositories.
+    </p>
+    </div>
+
+    <p>You may need to connect to GitHub repositories with 
+        <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh">SSH</a>. 
+        In this case, you will need to set up an SSH key to connect with.
+    </p>
+
+    <p>First, you should check if you have any existing SSH keys. You can do this by running the following
+        commands to list any files in your .ssh directory:
+    </p>
+
+    <p><code>ls -al ~/.ssh</code>
+    </p>
+
+    <details>
+        <summary>Windows</summary>
+        <code>ls -al ~/.ssh</code>
+    </details>
+
+    <details>
+        <summary>Mac</summary>
+        <code>ls -al ~/.ssh</code>
+    </details>
+
+    <p>If you need to generate generate an SSH key, run the following command and replace 
+        <code>your_email@example.com</code> with the email associated with your GitHub account:
+    </p>
+
+    <p><code>ssh-keygen -t ed25519 -C "your_email@example.com"</code>
+    </p>
+
+    <details>
+        <summary>Windows</summary>
+        <code>ssh-keygen -t ed25519 -C "your_email@example.com"</code>
+    </details>
+
+    <details>
+        <summary>Mac</summary>
+        <code>ssh-keygen -t ed25519 -C "your_email@example.com"</code>
+    </details>
+
+
+    <p>You will be prompted with <code>Enter file in which to save the key</code>, for which you can 
+        press enter to accept the default location. You will also be prompted choose a passphrase. Press 
+        enter if you do not want a passphrase. 
+    </p>
+
+    <p>You must now add your pubic key to your GitHub account. Copy the contents of the <code>.pub</code>
+        file generated. With a public file named <code>id_ed25519.pub</code>, you could do this with the following command:
+    </p>
+
+    <p><code>cat ~/.ssh/id_ed25519.pub</code>
+    </p>
+
+    <details>
+        <summary>Windows</summary>
+        <code>clip < ~/.ssh/id_ed25519.pub</code>
+    </details>
+
+    <details>
+        <summary>Mac</summary>
+        <code>pbcopy < ~/.ssh/id_ed25519.pub</code>
+    </details>
+
+    <p>Now, on your GitHub account, go to <code>Settings > SSH and GPG keys</code> and click <code>
+        New SSH key</code>. Paste the <code>.pub</code> file contents in the Key box, give it a title, 
+        and save. You should now be able to connect to repositories via SSH.
+    </p>
+
 
 </div>

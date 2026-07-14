@@ -76,11 +76,20 @@ title: Git Guide - CLI
         On the <a href="https://github.com/">
         GitHub website</a> you will find a project page for each repository hosted there.
         The repository on the GitHub website is know as a remote repository, which means that it is 
-        hosted on a server accessible to others. You can access the code in this repository on your device 
+        hosted on a server accessible to others. </p>
+        
+        <p>To use a GitHub repository for your code create a new repository on the GitHub website.
+            Go to your repository in your browser, and copy the URL of the page. Back in your local initisalised
+            repository, use the command <code>git remote add origin REPO_URL</code>, 
+            where <code>REPO_URL</code> is the URL
+            you copied. 
+        </p>
+        
+        <p>You can access remote repositories on your device 
         by running <code>git clone CLONE_ID</code> - where <code>CLONE_ID</code> is a specific address that 
         can be found on the project page - in the location you would like to store the code. The version of 
         the repository that you have cloned to your device is know as a local repository, as it can only be 
-        accessed locally. 
+        accessed locally.</p>
 
         <div class="box box1">
             <!--<img src="https://applied-materials-technology.github.io/data-storage-guide/images/git_clone.png">-->
@@ -209,7 +218,7 @@ title: Git Guide - CLI
     </ul> 
     </p>
 
-    <div id="additional_setuo"></div>
+    <div id="additional_setup"></div>
     <h2><b>Additional Settings</b></h2>
 
     <div id="shh_keys"></div>
